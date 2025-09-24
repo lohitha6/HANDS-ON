@@ -1,4 +1,4 @@
 FROM debian:9.5-slim
-ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/bin/sh", "-c"]
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh]
