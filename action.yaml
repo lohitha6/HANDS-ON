@@ -1,16 +1,20 @@
-name: 'my forst-container'
+name: 'my first-container'
 description: 'A cloud guru'
+
 inputs:
- myInput:
-   description:'greeting to use'
-   required:true
-   default:'Awesome Guru'
+  myInput:
+    description: 'Greeting to use'
+    required: true
+    default: 'Awesome Guru'
+
 outputs:
   myOutput:
-  description:'total memory'
+    description: 'Total memory'
+
 runs:
- using: 'docker'
- image:'Dockerfile'
+  using: 'docker'
+  image: 'Dockerfile'
+
  
 
  
