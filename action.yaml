@@ -1,5 +1,5 @@
 name: 'my forst-container'
-description 'A cloud guru'
+description: 'A cloud guru'
 inputs:
  myInput:
    description:'greeting to use'
