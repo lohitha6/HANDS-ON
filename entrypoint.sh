@@ -1,12 +1,15 @@
 #!/bin/sh
 echo "Hello $INPUT_MYINPUT"
 
-# Capture memory info safely
+# Capture memory info
 memory=$(cat /proc/meminfo)
 
-# Write to GitHub Actions output file using new syntax
-echo "memory<<EOF" >> $GITHUB_OUTPUT
-echo "$memory" >> $GITHUB_OUTPUT
-echo "EOF" >> $GITHUB_OUTPUT
+# Safely write multi-line output to GitHub Actions output file
+{
+  echo "memory<<EOF"
+  echo "$memory"
+  echo "EOF"
+} >> "$GITHUB_OUTPUT"
+
 
 
