@@ -1,8 +1,12 @@
 #!/bin/sh
 echo "Hello $INPUT_MYINPUT"
 
+# Capture memory info safely
 memory=$(cat /proc/meminfo)
 
-# Recommended way to set outputs in GitHub Actions (new syntax)
-echo "memory=$memory" >> $GITHUB_OUTPUT
+# Write to GitHub Actions output file using new syntax
+echo "memory<<EOF" >> $GITHUB_OUTPUT
+echo "$memory" >> $GITHUB_OUTPUT
+echo "EOF" >> $GITHUB_OUTPUT
+
 
